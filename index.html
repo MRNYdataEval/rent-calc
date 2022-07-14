@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rent Calculator</title> 
+    <link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
+    <meta content='width=device-width, minimum-scale=1, maximum-scale=1' name='viewport'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+
+  <body>
+    
+    <div id="rent-calc-wrapper">
+
+    <form action="" method="post" enctype="multipart/form-data" id="rent-calculator">
+      <fieldset>
+        <input type="radio" class="calc-lang-selector" name="language" value="ES" checked>
+        <label>Espa&ntilde;ol</label>
+        <input type="radio" class="calc-lang-selector" name="language" value="EN">
+        <label>English</label>
+      </fieldset>
+
+      <h2 id="calc-title">Future Monthly Rent Calculator</h2>
+      <h3 id="calc-subtite">For Rent Stabilized Units</h3>
+
+      <fieldset>
+        <label id="calc-label-rent">Current Rent <em>($)</em></label>
+        <input type="number" name="rent" id="calc-rent" min="1" max="10000" />
+      </fieldset>
+
+      <fieldset>
+        <label id="calc-label-exp">Current Lease Expiration Date (MM/YYYY)</label>
+        <select type="text" name="exp-month" id="calc-exp-month">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select type="text" name="exp-year" id="calc-exp-year"> 
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select>
+      </fieldset>
+
+      <button id="calc-submit-button">Submit</button>
+    </form>
+
+    <div id="calc-output"></div>
+    <div id="calc-error"></div>
+
+<!--
+    <ul>
+<li>CALENDAR TO EVENTS</li>
+<li>LINK TO RENT HISTORY</li>
+<li>MTR INTEREST FORM</li>
+</ul>-->
+    </div>
+
+    <script>window.jQuery || document.write("<script src='assets/js/lib/jquery.js'>\x3C/script>")</script>
+    
+    <script src="js/global-jr.js"></script>
+  </body>
+<html>
+
+  
+

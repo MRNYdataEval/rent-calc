@@ -1,0 +1,19 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+body {
+  font-family: 'Encode Sans', sans-serif; }
+
+a {
+  color: black; }
+
+.eventbrites {
+  border-top: 1px solid gray;
+  margin-top: 45px;
+  margin-bottom: 45px; }
+
+.eventbrite-desc-full, .eventbrite-link {
+  display: block; }
+
+.eventbrite-desc {
+  display: none; }

@@ -1,0 +1,114 @@
+$sb-red:  #ca5d00
+$sb-blue: #04889d
+$sb-gray: #E9E9E9
+
+@mixin animate($prop, $time:"", $delay:"")
+  @if $time == ""
+    $time: 0.5s
+  @if $delay == ""
+    $delay: 0s
+
+  @include transition-property($prop)
+  @include transition-duration($time)
+  @include transition-timing-function(cubic-bezier(0.190, 1.000, 0.220, 1.000))
+  @include transition-delay($delay)
+
+
+@mixin link 
+  font-family: 'Encode Sans', sans-serif
+  font-size: 11px
+  line-height: 1.3em
+  font-weight: 600
+  text-decoration: none
+  text-transform: uppercase
+  letter-spacing: 2px
+  color: $sb-blue
+
+@mixin headline 
+  font-family: 'Encode Sans', sans-serif
+
+
+@mixin small-headline 
+  font-family: 'Encode Sans', sans-serif
+  font-size: 12px
+  font-weight: bold
+  text-transform: uppercase
+  letter-spacing: 1px
+
+
+@mixin body 
+  font-family: 'Georgia', serif
+
+
+@mixin paragraph 
+  font-family: 'Georgia', serif
+  font-size: 15px
+
+
+
+///////////////////////// SUSY grid defaults
+
+$total-columns     : 12
+$gutter-width      : 1.5em
+$grid-padding      : 1em
+$border-box-sizing : true
+
+
+///////////////////////// Media query mixins
+
+// Tablet media query
+// 576px through 768px
+=small-tablet
+  +with-grid-settings(12,4em,2em,2em)
+    +at-breakpoint(36em 12 48em)
+      @content
+
+// 768px through 960px
+=tablet
+  +with-grid-settings(12,4em,2em,2em)
+    +at-breakpoint(48em 12 60em)
+      @content
+
+// Desktop media query
+// >= 960px with a max width of 1264px
+=desktop
+  $container-width: 79em
+  +with-grid-settings(12,4em,2em,2em)
+    +at-breakpoint(60em 12 lt-ie9)
+      @content
+
+// In some cases tablet and desktop are the same
+=tablet-desktop
+  +tablet
+    @content
+
+  +desktop
+    @content
+
+// Retina capable media query
+=retina
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2)
+    @content
+    
+.lt-gray
+  color: #9f9e9e
+
+.vjack:before
+  content: ""
+  display: inline-block
+  height: 100%
+  vertical-align: middle
+  margin-right: -0.25em
+
+.vcenter
+  display: inline-block
+  vertical-align: middle
+  width: 99%
+
+.vbottom
+  display: inline-block
+  vertical-align: bottom
+  width: 99%
+
+.clear
+  clear: both
