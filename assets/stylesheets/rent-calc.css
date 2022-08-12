@@ -1,0 +1,369 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+.lt-gray {
+  color: #9f9e9e; }
+
+.vjack:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; }
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  width: 99%; }
+
+.vbottom {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 99%; }
+
+.clear {
+  clear: both; }
+
+.clear {
+  clear: both; }
+
+body {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 14px;
+  line-height: 1.3em; }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+#rent-calc-wrapper {
+  position: relative;
+  margin: 2px auto;
+  background: #34aedd;
+  color: white;
+  font-size: 18px; }
+#rent-calc-wrapper h2, #rent-calc-wrapper #rent-calc-title {
+  max-width: 320px;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 44px; }
+#rent-calc-wrapper h3, #rent-calc-wrapper #rent-calc-subtitle {
+  font-size: 21px;
+  font-weight: bold;
+  font-weight: 800;
+  line-height: 40px;
+  color: white; }
+#rent-calc-wrapper .rent-calc-fieldset {
+  margin: 30px 0;
+  border: 0; }
+#rent-calc-wrapper label {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3rem;
+  margin-bottom: 9px;
+  color: white; }
+#rent-calc-wrapper #rent-calc-lang-selector {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  padding: 10px 10px 10px 20px;
+  background: #9cc736;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10px 100%); }
+#rent-calc-wrapper .rent-calc-lang-option {
+  font-size: 12px; }
+#rent-calc-wrapper .rent-calc-lang-option.selected {
+  display: none; }
+#rent-calc-wrapper #rent-calc-rent {
+  min-width: 142px; }
+#rent-calc-wrapper .rent-calc-input {
+  padding: 0.7em 0.7em;
+  font-family: "Montserrat", "sans-serif";
+  font-weight: 400;
+  font-size: 1.2rem;
+  box-sizing: 0;
+  outline: 0; }
+#rent-calc-wrapper #rent-calc-submit-button {
+  min-width: 124px;
+  clear: both;
+  border: 0;
+  font-family: "Montserrat", "sans-serif";
+  font-size: 1.2rem;
+  cursor: pointer; }
+#rent-calc-wrapper #rent-calc-rent-missing {
+  padding-top: 6px;
+  color: #ff8f00; }
+#rent-calc-wrapper #rent-calc-inner-wrapper {
+  padding: 50px 5%;
+  background: #06457e; }
+
+#rent-calc-output-wrapper {
+  position: relative;
+  padding: 50px 5%;
+  min-height: 200px; }
+#rent-calc-output-wrapper:before {
+  -moz-transition-property: "all";
+  -o-transition-property: "all";
+  -webkit-transition-property: "all";
+  transition-property: "all";
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/Pass-Harrassment-Tenant-Protection-Hostigacion-Caseros-BASTA.jpg"); }
+#rent-calc-output-wrapper.show:before {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0; }
+#rent-calc-output-wrapper #rent-calc-output {
+  -moz-transition-property: "all";
+  -o-transition-property: "all";
+  -webkit-transition-property: "all";
+  transition-property: "all";
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  padding: 0; }
+#rent-calc-output-wrapper #rent-calc-output.show {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1; }
+#rent-calc-output-wrapper .new-rent-calc {
+  width: 90%; }
+#rent-calc-output-wrapper .new-rent-calc:first-child {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid white; }
+#rent-calc-output-wrapper .new-rent-label {
+  font-weight: bold;
+  margin-bottom: 6px; }
+#rent-calc-output-wrapper .new-rental-cost {
+  font-weight: bold;
+  font-size: 23px; }
+#rent-calc-output-wrapper .new-rent-amount {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-bottom: 12px; }
+#rent-calc-output-wrapper .new-rent-amount h2 {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline; }
+#rent-calc-output-wrapper .new-rent-per-month {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-left: 10px; }
+#rent-calc-output-wrapper .new-rental-term {
+  color: white;
+  line-height: 1.4em; }
+#rent-calc-output-wrapper .new-rent-breakdow {
+  display: block;
+  font-size: 14px;
+  font-weight: normal; }
+#rent-calc-output-wrapper a {
+  text-decoration: underline; }
+
+#rent-calc-disclaimer {
+  background: #9cc736;
+  padding: 20px 5%;
+  font-style: italic; }
+
+@media (min-width: 48em) and (max-width: 60em) {
+  #rent-calc-wrapper #rent-calc-inner-wrapper {
+    position: relative;
+    width: 40%; }
+  #rent-calc-wrapper #rent-calc-output-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding: 0 0; }
+  #rent-calc-wrapper #rent-calc-output {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 60px; }
+  #rent-calc-wrapper #rent-arrow-right {
+    -moz-transition-property: "all";
+    -o-transition-property: "all";
+    -webkit-transition-property: "all";
+    transition-property: "all";
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition-delay: 0.1s;
+    -o-transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-top: -60px;
+    margin-left: -40px;
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 40px solid #06457e; }
+  #rent-calc-wrapper #rent-arrow-right.show {
+    margin-left: -1px; } }
+@media (min-width: 60em) {
+  #rent-calc-wrapper #rent-calc-inner-wrapper {
+    position: relative;
+    width: 40%; }
+  #rent-calc-wrapper #rent-calc-output-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding: 0 0; }
+  #rent-calc-wrapper #rent-calc-output {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 60px; }
+  #rent-calc-wrapper #rent-arrow-right {
+    -moz-transition-property: "all";
+    -o-transition-property: "all";
+    -webkit-transition-property: "all";
+    transition-property: "all";
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition-delay: 0.1s;
+    -o-transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-top: -60px;
+    margin-left: -40px;
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 40px solid #06457e; }
+  #rent-calc-wrapper #rent-arrow-right.show {
+    margin-left: -1px; } }
+.lt-ie9 #rent-calc-wrapper #rent-calc-inner-wrapper {
+  position: relative;
+  width: 40%; }
+.lt-ie9 #rent-calc-wrapper #rent-calc-output-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  padding: 0 0; }
+.lt-ie9 #rent-calc-wrapper #rent-calc-output {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 60px; }
+.lt-ie9 #rent-calc-wrapper #rent-arrow-right {
+  -moz-transition-property: "all";
+  -o-transition-property: "all";
+  -webkit-transition-property: "all";
+  transition-property: "all";
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  margin-top: -60px;
+  margin-left: -40px;
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 40px solid #06457e; }
+.lt-ie9 #rent-calc-wrapper #rent-arrow-right.show {
+  margin-left: -1px; }

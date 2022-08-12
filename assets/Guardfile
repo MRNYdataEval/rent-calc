@@ -1,0 +1,10 @@
+input_dir = 'js/src'
+coffeescript_options = {
+  input: input_dir,
+  output: 'js',
+  patterns: [%r{^#{input_dir}/(.+\.(?:coffee|coffee\.md|litcoffee))$}]
+}
+
+guard 'coffeescript', coffeescript_options do
+  coffeescript_options[:patterns].each { |pattern| watch(pattern) }
+end
