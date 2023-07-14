@@ -11,7 +11,7 @@
 
   window.isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
 
-  var userLang = navigator.language.substring(0, 2) || navigator.userLanguage.substring(0, 2); 
+  var userLang = document.documentElement.lang != null ?  document.documentElement.lang.substring(0, 2)  :  navigator.language.substring(0, 2); 
 
 
   $body = $('body');
@@ -169,7 +169,7 @@
         calcOutput += "<span class='new-rental-cost'>$" + formatRent(new1yrRent) + str["p/m"] + "</span>";
         calcOutput += "<br /><small class='new-rate-breakdown'>($" + formatRent(baseRent) + " + " + rate1yr + str["inc"] + ")</small><br>";
         calcOutput += "</p>";
-      } 
+      } else 
       // End Exception
       // Standard 1 Year Lease
       else {
@@ -185,15 +185,41 @@
 
       calcOutput += "</div>";
 
-      // Add 2 year lease rent output string
-      calcOutput += "<div class='new-rent-calc'>";
-      calcOutput += "<h1 class='new-rent-label'>" + str["2yrlease-label"] + "</h1>";
-      calcOutput += "<div class='new-rent-amount'><h2>$" + formatRent(new2yrRent) + "</h2><span class='new-rent-per-month'>" + str["p/m"] + "</span></div>";
-      calcOutput += "<p class='new-rental-term'>" + str["2yrlease"] + " $" + formatRent(new2yrRent);
-      calcOutput += " <small class='new-rent-breakdown'>($" + formatRent(baseRent) + " + " + rate2yr + str["inc"] + ")</small>.";
+      if (rateYear == "2023") {
 
-      calcOutput += "</p>";
-      calcOutput += "</div>";
+
+        var Yr2rentInc2yr = parseFloat(baseRent * (3.20/100));
+        var Yr2new2yrRent = baseRent + Yr2rentInc2yr;
+
+        // Add 2 year lease rent output string
+        calcOutput += "<div class='new-rent-calc'>";
+        calcOutput += "<h1 class='new-rent-label'>" + str["2yrlease-label"] + "</h1>";
+
+        calcOutput += "<div class='new-rent-amount'><h2>$" + formatRent(new2yrRent) + "</h2><span class='new-rent-per-month'>" + str["p/m"] + "</span></div>";
+        calcOutput += "<p class='new-rental-term'>" + str["2yrlease"] + " $" + formatRent(new2yrRent);
+        calcOutput += " <small class='new-rent-breakdown'>($" + formatRent(baseRent) + " + " + rate2yr + str["inc"] + ")</small>.";
+
+        calcOutput += "<div class='new-rent-amount'><h2>$" + formatRent(Yr2new2yrRent) + "</h2><span class='new-rent-per-month'>" + str["p/m"] + "</span></div>";
+        calcOutput += "<p class='new-rental-term'>" + str["2yrlease"] + " $" + formatRent(Yr2new2yrRent);
+        calcOutput += " <small class='new-rent-breakdown'>($" + formatRent(baseRent) + " + " + '3.2%' + str["inc"] + ")</small>.";
+
+        calcOutput += "</p>";
+        calcOutput += "</div>";
+
+      } else {
+
+
+         // Add 2 year lease rent output string
+        calcOutput += "<div class='new-rent-calc'>";
+        calcOutput += "<h1 class='new-rent-label'>" + str["2yrlease-label"] + "</h1>";
+        calcOutput += "<div class='new-rent-amount'><h2>$" + formatRent(new2yrRent) + "</h2><span class='new-rent-per-month'>" + str["p/m"] + "</span></div>";
+        calcOutput += "<p class='new-rental-term'>" + str["2yrlease"] + " $" + formatRent(new2yrRent);
+        calcOutput += " <small class='new-rent-breakdown'>($" + formatRent(baseRent) + " + " + rate2yr + str["inc"] + ")</small>.";
+
+        calcOutput += "</p>";
+        calcOutput += "</div>";
+
+      }
 
 
       // Write to DOM
